@@ -5,7 +5,7 @@ const PlaceCategory = () => {
     return ( 
         <>
             <div>
-
+                
             </div>
         </>
     );

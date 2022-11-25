@@ -19,9 +19,12 @@ function App() {
 
   return ( 
     <div className="App">
-      <Context.Provider value={{ major, setMajor }}> 
+      <Context.Provider value={{ major, setMajor, filter, setFilter }}> 
       <Filter/>  
-      <MajorCategory/>
+      {
+        filter == true ? <MajorCategory/> : null 
+      }
+      
 
 
 
