@@ -14,8 +14,8 @@ const MajorCategory = () => {
                 return (
             <div key={i} className="category__box"> 
                 <div>
-                    <span>{major[i].icon}</span>
-                    <h4>{major[i].name}</h4>
+                    <span>{a.icon}</span>
+                    <h4>{a.name}</h4>
                 </div>
             </div>
                 )

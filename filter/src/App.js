@@ -19,9 +19,11 @@ function App() {
 
   return ( 
     <div className="App">
-
       <Context.Provider value={{ major, setMajor }}> 
       <Filter/>  
+      <MajorCategory/>
+
+
 
       <Routes>   
       <Route path='major' element={ <MajorCategory/> }></Route>

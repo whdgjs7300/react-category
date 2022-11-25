@@ -1,5 +1,5 @@
 
-    let categorydata = [
+    const categorydata = [
         {
             icon : '',
             id : 0,
@@ -15,8 +15,8 @@
         {
             icon : '',
             id : 2,
-            name : '피부과'
-        },
+            name : '피부과' 
+        }, 
 
         {
             icon : '',
