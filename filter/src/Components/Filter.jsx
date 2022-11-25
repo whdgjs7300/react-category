@@ -16,7 +16,7 @@ const Filter = () => {
     
 
     // 필터버튼 이벤트 함수
-    const handleBtns = (e) =>{
+    const handleBtns = (e) =>{ 
         let word = e.target.value;
         if (word === 'Major') { 
             setCategory(categorydata);  
@@ -42,7 +42,7 @@ const Filter = () => {
         
         <div> 
         {               
-        category ? category.map((item,i)=>{ 
+        category ? category.map((item,i)=>{  
             return ( 
         <div key={i} className="category__box">   
             <Link to={"/detail"}>

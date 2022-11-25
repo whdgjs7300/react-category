@@ -13,12 +13,12 @@ const Detail = () => {
 
     return (  
     <div>
-        { 
+        {  
             category && category.map((item, i)=>{  
             return <DetailItem key={i} item={item}/>
         })
         
-        }         
+        }           
     </div>   
     );
 } 
