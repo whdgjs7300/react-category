@@ -1,43 +1,66 @@
-import MajorCategory from "./MajorCategory";
-import PlaceCategory from "./PlaceCategory";
+
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
-import { useContext } from "react";
-import { Context } from "../App";
+import { createContext, useContext, useState } from "react";
 import categorydata from "../Data/categorydata";
 import categorydata1 from "../Data/categorydata1";
+import Detail from "./Detail";
+import { Context } from "../App";
 
 
 
-const Filter = () => {
-    const navigate = useNavigate();
+
+const Filter = () => { 
+    const navigate = useNavigate(); 
     
-    const {major,setMajor,filter,setFilter} = useContext(Context);
-    
+    const {major, setMajor} = useContext(Context);
+    const [filter, setFilter] = useState(false);
+
+    // 필터버튼 이벤트 함수
     const handleBtns = (e) =>{
         let word = e.target.value;
-        if (word === "ALL") {
-            setMajor(); 
-        }else if(word === 'Major') {
-            setMajor(categorydata);
-        }else if(word === 'Place') {
+        if (word === 'Major') { 
+            setMajor(categorydata);  
+        }else if(word === 'Place') {  
             setMajor(categorydata1);
         }
         filter === false ? setFilter(true) : setFilter(false);
     }
-
     
-    return ( 
+    
+    
+
+
+    return (  
 
 
     <>
+
+
+    <div className="filter__container">
         <div>
-            <button value='All' onClick={handleBtns}>ALL</button>
             <button value='Place' onClick={handleBtns}>지역별</button>
             <button value='Major' onClick={handleBtns}>진료별</button>
-            <Link onClick={()=>{
-                navigate('./major')}} to='./major'>진료별</Link>
-        </div>        
+        </div>            
+        
+        <div> 
+        {               
+        filter == true ? major.map((a,i)=>{ 
+            return ( 
+        <div key={i} className="category__box">  
+            <Link to={"/detail"}>
+                <span>{a.icon}</span> 
+                <h4>{a.name}</h4>  
+            </Link> 
+        </div>  
+            )
+        }) : null 
+        } 
+        </div>                
+    </div>      
+        
+
+        
+        
     </>
     );
 }

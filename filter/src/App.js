@@ -1,42 +1,42 @@
-import logo from './logo.svg';
+
 import './App.css'; 
-import {createContext, useState} from 'react';
 import Filter from './Components/Filter';
-import categorydata from './Data/categorydata';
 import { Routes,Route, Link, useNavigate, Outlet } 
 from 'react-router-dom';
-import MajorCategory from './Components/MajorCategory';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import Detail from './Components/Detail';
+import { useState } from "react";
+import { createContext } from 'react'; 
 
-// State 보관함
-  export let Context = createContext();
-
+// State 보관함 
+export const Context = createContext();
 
 function App() {
 
-  const [major, setMajor] = useState(categorydata);
-  const [filter, setFilter] = useState(false);
+  const [major,setMajor] = useState();
+  
 
 
   return ( 
-    <div className="App">
-      <Context.Provider value={{ major, setMajor, filter, setFilter }}> 
-      <Filter/>  
-      {
-        filter == true ? <MajorCategory/> : null 
-      }
+    <Context.Provider value={{major,setMajor}}>
+      <div className="App">
       
+      
+      
+      <Routes>     
+        <Route path='' element={<Filter/>}></Route>
+        <Route path='/detail' element={<Detail/>}></Route>
 
-
-
-      <Routes>   
-      <Route path='major' element={ <MajorCategory/> }></Route>
       </Routes>
 
 
-    </Context.Provider>      
+      
       
       
     </div>
+    </Context.Provider>
+    
   );
 } 
 
