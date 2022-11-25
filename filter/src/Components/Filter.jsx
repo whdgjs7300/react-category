@@ -12,16 +12,16 @@ import { Context } from "../App";
 const Filter = () => { 
     const navigate = useNavigate(); 
     
-    const {major, setMajor} = useContext(Context);
+    const {category, setCategory} = useContext(Context);
     
 
     // 필터버튼 이벤트 함수
     const handleBtns = (e) =>{
         let word = e.target.value;
         if (word === 'Major') { 
-            setMajor(categorydata);  
+            setCategory(categorydata);  
         }else if(word === 'Place') {  
-            setMajor(categorydata1);
+            setCategory(categorydata1);
         }
         
     }
@@ -42,7 +42,7 @@ const Filter = () => {
         
         <div> 
         {               
-        major ? major.map((item,i)=>{ 
+        category ? category.map((item,i)=>{ 
             return ( 
         <div key={i} className="category__box">   
             <Link to={"/detail"}>

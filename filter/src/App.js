@@ -14,12 +14,12 @@ export const Context = createContext();
 
 function App() {
 
-  const [major,setMajor] = useState();
+  const [category,setCategory] = useState();
   
 
 
   return ( 
-    <Context.Provider value={{major,setMajor}}>
+    <Context.Provider value={{category,setCategory}}> 
       <div className="App">
       
       

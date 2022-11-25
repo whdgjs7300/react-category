@@ -7,14 +7,14 @@ import DetailItem from "./DetailItem";
 const Detail = () => {
 
     const {id} = useParams();
-    const {major} = useContext(Context);
+    const {category} = useContext(Context);
     const [detailData,setDetailData] = useState(''); 
 
 
     return (  
     <div>
         { 
-            major && major.map((item, i)=>{  
+            category && category.map((item, i)=>{  
             return <DetailItem key={i} item={item}/>
         })
         
