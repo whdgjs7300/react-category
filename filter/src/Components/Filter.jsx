@@ -13,7 +13,7 @@ const Filter = () => {
     const navigate = useNavigate(); 
     
     const {major, setMajor} = useContext(Context);
-    const [filter, setFilter] = useState(false);
+    
 
     // 필터버튼 이벤트 함수
     const handleBtns = (e) =>{
@@ -23,7 +23,7 @@ const Filter = () => {
         }else if(word === 'Place') {  
             setMajor(categorydata1);
         }
-        setFilter(!filter);
+        
     }
     
     
@@ -42,16 +42,16 @@ const Filter = () => {
         
         <div> 
         {               
-        filter ? major.map((item,i)=>{ 
+        major ? major.map((item,i)=>{ 
             return ( 
         <div key={i} className="category__box">   
             <Link to={"/detail"}>
                 <span>{item.icon}</span> 
-                <h4>{item.name}</h4>  
+                <h4>{item.name}</h4>   
             </Link> 
         </div>  
             )
-        }) : null 
+        }) :  null
         
         } 
         </div>                
