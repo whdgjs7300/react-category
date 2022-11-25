@@ -23,7 +23,7 @@ const Filter = () => {
         }else if(word === 'Place') {  
             setMajor(categorydata1);
         }
-        filter === false ? setFilter(true) : setFilter(false);
+        setFilter(!filter);
     }
     
     
@@ -34,8 +34,6 @@ const Filter = () => {
 
 
     <>
-
-
     <div className="filter__container">
         <div>
             <button value='Place' onClick={handleBtns}>지역별</button>
@@ -44,16 +42,17 @@ const Filter = () => {
         
         <div> 
         {               
-        filter == true ? major.map((a,i)=>{ 
+        filter ? major.map((item,i)=>{ 
             return ( 
-        <div key={i} className="category__box">  
+        <div key={i} className="category__box">   
             <Link to={"/detail"}>
-                <span>{a.icon}</span> 
-                <h4>{a.name}</h4>  
+                <span>{item.icon}</span> 
+                <h4>{item.name}</h4>  
             </Link> 
         </div>  
             )
         }) : null 
+        
         } 
         </div>                
     </div>      
