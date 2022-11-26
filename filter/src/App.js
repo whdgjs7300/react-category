@@ -8,6 +8,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import Detail from './Components/Detail';
 import { useState } from "react";
 import { createContext } from 'react'; 
+import DetailInfo from './Components/DetailInfo';
 
 // State 보관함 
 export const Context = createContext();
@@ -25,9 +26,9 @@ function App() {
       
       
       <Routes>     
-        <Route path='' element={<Filter/>}></Route>
-        <Route path='/detail' element={<Detail/>}></Route>
-
+        <Route path='/' element={<Filter/>}></Route>
+        <Route path='/detail/' element={<Detail/>}></Route>
+        <Route path='/detailinfo/' element={<DetailInfo/>} > </Route>
       </Routes>
 
 

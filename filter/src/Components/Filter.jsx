@@ -26,9 +26,9 @@ const Filter = () => {
         
     }
     
+    const [idCount,setIDCount] = useState(0);
     
-    
-
+    console.log(category);
 
     return (  
 
@@ -45,7 +45,7 @@ const Filter = () => {
         category ? category.map((item,i)=>{  
             return ( 
         <div key={i} className="category__box">   
-            <Link to={"/detail"}>
+            <Link to={`/detail/`}>
                 <span>{item.icon}</span> 
                 <h4>{item.name}</h4>   
             </Link> 
