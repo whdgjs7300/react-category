@@ -33,19 +33,19 @@ const categorydata1 = [
     },
     {        
         id : 8,
-        name : '경남',
+        name : '경상남도',
     },
     {        
         id : 9,
-        name : '경북',
+        name : '경상북도',
     },
     {        
         id : 10,
-        name : '전남',
+        name : '전라남도',
     },
     {        
         id : 11,
-        name : '전북',
+        name : '전라북도',
     },
     {        
         id : 12,
@@ -53,11 +53,11 @@ const categorydata1 = [
     },
     {        
         id : 13,
-        name : '충남',
+        name : '충청남도',
     },
     {        
         id : 14,
-        name : '충북',
+        name : '충청북도',
     },
     {        
         id : 15,

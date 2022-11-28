@@ -9,7 +9,7 @@ const PlaceDetail = () => {
     
     
     
-    const {category,hospitalData,setHospitalData} = useContext(Context);
+    const {category,hospitalData} = useContext(Context);
     
     
     let {id} = useParams();
