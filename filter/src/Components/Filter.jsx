@@ -1,5 +1,5 @@
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Outlet, useNavigate, useParams } from "react-router-dom";
 import { createContext, useContext, useState } from "react";
 import categorydata from "../Data/categorydata";
 import categorydata1 from "../Data/categorydata1";
@@ -25,10 +25,11 @@ const Filter = () => {
         }
         
     }
+    let {id} = useParams();
+
     
-    const [idCount,setIDCount] = useState(0);
     
-    console.log(category);
+
 
     return (  
 
@@ -45,7 +46,7 @@ const Filter = () => {
         category ? category.map((item,i)=>{  
             return ( 
         <div key={i} className="category__box">   
-            <Link to={`/detail/`}>
+            <Link  to={`/detail${i}`}>
                 <span>{item.icon}</span> 
                 <h4>{item.name}</h4>   
             </Link> 
@@ -56,7 +57,7 @@ const Filter = () => {
         } 
         </div>                
     </div>      
-        
+    
 
         
         

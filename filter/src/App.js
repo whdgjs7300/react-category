@@ -9,6 +9,7 @@ import Detail from './Components/Detail';
 import { useState } from "react";
 import { createContext } from 'react'; 
 import DetailInfo from './Components/DetailInfo';
+import Hospital from "./Data/Hospital.json"
 
 // State 보관함 
 export const Context = createContext();
@@ -16,18 +17,19 @@ export const Context = createContext();
 function App() {
 
   const [category,setCategory] = useState();
+  const [hospitalData,setHospitalData] = useState(Hospital); 
   
 
-
   return ( 
-    <Context.Provider value={{category,setCategory}}> 
+    <Context.Provider 
+    value={{category,setCategory,hospitalData,setHospitalData}}> 
       <div className="App">
       
       
       
       <Routes>     
         <Route path='/' element={<Filter/>}></Route>
-        <Route path='/detail/' element={<Detail/>}></Route>
+        <Route path='/detail:id' element={<Detail/>}></Route>
         <Route path='/detailinfo/' element={<DetailInfo/>} > </Route>
       </Routes>
 

@@ -1,9 +1,11 @@
+import { useContext } from "react";
 import { useParams } from "react-router-dom";
-
+import { Context } from "../App";
 
 
 const DetailInfo = () => {
     const {id} = useParams();
+    const {category} = useContext(Context)
 
     return ( 
     
