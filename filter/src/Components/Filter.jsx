@@ -9,11 +9,9 @@ import { Context } from "../App";
 
 
 const Filter = () => { 
-    const navigate = useNavigate(); 
     
     const {category, setCategory} = useContext(Context);
-    const [linkURL,setLinkURL] = useState('');
-
+    
     // 필터버튼 이벤트 함수
     const handleBtns = (e) =>{  
         let word = e.target.value;
@@ -24,14 +22,7 @@ const Filter = () => {
         }
         
     }
-    
-    
-
-    let {id} = useParams();
-
-    
-    
-
+            
 
     return (  
 
@@ -51,7 +42,7 @@ const Filter = () => {
             <Link to={'/placedetail'+i}>
                 <span>{item.icon}</span> 
                 <h4>{item.name}</h4>   
-            </Link> 
+            </Link>  
         </div>  
             )
         }) :   categorydata.map((item,i)=>{

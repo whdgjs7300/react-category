@@ -7,12 +7,10 @@ const MajorDetail = () => {
 
     const {category,hospitalData,setHospitalData,} = useContext(Context);
     let {id} = useParams();
-
-    const [major,setMajor] = useState([]);
     
     const idFilter = hospitalData
     .filter(major=> major.진료과목내용명.includes( category[id].name));
-    console.log(idFilter)
+    
 
 
     return ( 
@@ -21,9 +19,9 @@ const MajorDetail = () => {
         {  
             hospitalData && idFilter.map((item, i)=>{  
             return (
-                <div key={i}>
+                <div key={i}> 
         
-            <Link to={'/detailinfo'}>
+            <Link to={'/detailinfo'+i}>
             <div>                
                 <h4>진료과목</h4>기준으로 <br />
                 검색된 병원 목록입니다               

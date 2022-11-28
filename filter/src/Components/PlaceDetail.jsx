@@ -16,7 +16,7 @@ const PlaceDetail = () => {
     
     const idFilter = hospitalData
     .filter(place=> place.주소.includes( category[id].name));
-    console.log(idFilter)
+    
 
 
     return (  
@@ -25,9 +25,9 @@ const PlaceDetail = () => {
     {  
         hospitalData && idFilter.map((item, i)=>{  
         return (
-            <div key={i}>
+            <div key={i}> 
     
-        <Link to={'/detailinfo'}>
+        <Link to={'/detailinfo'+i}>
         <div>                
             <h4>지역별</h4>기준으로 <br />
             검색된 병원 목록입니다               
