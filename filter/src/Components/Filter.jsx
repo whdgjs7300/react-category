@@ -3,7 +3,6 @@ import { Link, Outlet, useNavigate, useParams } from "react-router-dom";
 import { createContext, useContext, useState } from "react";
 import categorydata from "../Data/categorydata";
 import categorydata1 from "../Data/categorydata1";
-import Detail from "./Detail";
 import { Context } from "../App";
 
 
@@ -13,7 +12,7 @@ const Filter = () => {
     const navigate = useNavigate(); 
     
     const {category, setCategory} = useContext(Context);
-    
+    const [linkURL,setLinkURL] = useState('');
 
     // 필터버튼 이벤트 함수
     const handleBtns = (e) =>{ 
@@ -25,6 +24,9 @@ const Filter = () => {
         }
         
     }
+    
+    
+
     let {id} = useParams();
 
     
@@ -41,18 +43,28 @@ const Filter = () => {
             <button value='Major' onClick={handleBtns}>진료별</button>
         </div>            
         
-        <div> 
+        <div>  
         {               
-        category ? category.map((item,i)=>{  
+        category == categorydata1 ? categorydata1.map((item,i)=>{  
             return ( 
-        <div key={i} className="category__box">   
-            <Link  to={`/detail${i}`}>
+        <div key={i} className="category__box">             
+            <Link to={'/placedetail'+i}>
                 <span>{item.icon}</span> 
                 <h4>{item.name}</h4>   
             </Link> 
         </div>  
             )
-        }) :  null
+        }) :   categorydata.map((item,i)=>{
+            return (
+                <div key={i} className="category__box">             
+            <Link to={'/majordetail'+i}>
+                <span>{item.icon}</span> 
+                <h4>{item.name}</h4>   
+            </Link> 
+        </div>
+            )
+        })
+        
         
         } 
         </div>                

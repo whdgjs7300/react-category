@@ -13,7 +13,7 @@ const DetailInfo = () => {
         <div>
             병원 지도 api
         </div>
-        <div>
+        <div> 
             <h4>병원이름</h4>
             <p>주소</p>
         </div>

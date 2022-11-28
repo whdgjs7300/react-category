@@ -5,26 +5,29 @@ import { createContext } from "react";
 
 
 
-const Detail = () => {
+const PlaceDetail = () => {
     
     
     
-    const {category,hospitalData} = useContext(Context);
+    const {category,hospitalData,setHospitalData} = useContext(Context);
     
     const [title,setTitle] = useState(0);
     const [count,setCount] = useState(0);
     const [majorData,setMajorData] = useState('');
-    const [placeData,setPlaceData] = useState('');
     let {id} = useParams();
     
-    
+    let major = () => { 
+        hospitalData.filter((major)=>{
+            
+        })
+    }   
 
 
     return (  
     <div>                
         <h4>{category[id].name}</h4>
         {  
-            hospitalData && hospitalData.filter(()=>{})
+            hospitalData && hospitalData
             .map((item, i)=>{  
             return (
                 <div key={i}>
@@ -49,4 +52,4 @@ const Detail = () => {
     );
 } 
 
-export default Detail;
+export default PlaceDetail;

@@ -5,11 +5,13 @@ import { Routes,Route, Link, useNavigate, Outlet }
 from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import Detail from './Components/Detail';
+import PlaceDetail from './Components/PlaceDetail';
 import { useState } from "react";
 import { createContext } from 'react'; 
 import DetailInfo from './Components/DetailInfo';
 import Hospital from "./Data/Hospital.json"
+import MajorDetail from './Components/MajorDetail';
+
 
 // State 보관함 
 export const Context = createContext();
@@ -20,7 +22,7 @@ function App() {
   const [hospitalData,setHospitalData] = useState(Hospital); 
   
 
-  return ( 
+  return (  
     <Context.Provider 
     value={{category,setCategory,hospitalData,setHospitalData}}> 
       <div className="App">
@@ -29,7 +31,8 @@ function App() {
       
       <Routes>     
         <Route path='/' element={<Filter/>}></Route>
-        <Route path='/detail:id' element={<Detail/>}></Route>
+        <Route path='/placedetail:id' element={<PlaceDetail/>}></Route>
+        <Route path='/Majordetail:id' element={<MajorDetail/>}></Route>
         <Route path='/detailinfo/' element={<DetailInfo/>} > </Route>
       </Routes>
 
