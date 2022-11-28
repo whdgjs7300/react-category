@@ -87,7 +87,7 @@
         {
             icon : '',
             id : 14,
-            name : '한의원'
+            name : '한방내과'
         },
 
         {
@@ -120,11 +120,7 @@
             name : '영상의학과'
         },
 
-        {
-            icon : '',
-            id : 20,
-            name : 'ALL'
-        },
+        
     ]
 
     export default categorydata;

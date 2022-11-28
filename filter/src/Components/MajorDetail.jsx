@@ -6,13 +6,19 @@ import { useParams, Link } from "react-router-dom";
 const MajorDetail = () => {
 
     const {category,hospitalData,setHospitalData,} = useContext(Context);
+    let {id} = useParams();
+
+    const [major,setMajor] = useState([]);
+    const idFilter = hospitalData
+    .filter(major=> category[id].name == major.진료과목내용명);
+    console.log(idFilter);
+
     
     return ( 
         <div>
-            <h4>{category[0].name}</h4>
+            <h4>{category[id].name}</h4>
         {  
-            hospitalData && hospitalData
-            .map((item, i)=>{  
+            hospitalData && idFilter.map((item, i)=>{  
             return (
                 <div key={i}>
         
@@ -23,8 +29,8 @@ const MajorDetail = () => {
             </div>
                 <div> 
                     <h5>병원</h5>  
-                    <h4>{hospitalData[i].사업장}</h4>
-                    <p>{hospitalData[i].주소}</p>         
+                    <h4>{item.사업장}</h4>
+                    <p>{item.주소}</p>         
                 </div>
             </Link>                
                 </div>

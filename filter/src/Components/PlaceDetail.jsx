@@ -16,11 +16,7 @@ const PlaceDetail = () => {
     const [majorData,setMajorData] = useState('');
     let {id} = useParams();
     
-    let major = () => { 
-        hospitalData.filter((major)=>{
-            
-        })
-    }   
+    
 
 
     return (  
@@ -30,8 +26,7 @@ const PlaceDetail = () => {
             hospitalData && hospitalData
             .map((item, i)=>{  
             return (
-                <div key={i}>
-        
+                <div key={i}>        
             <Link to={'/detailinfo'}>
             <div>                
                 <h4>진료과목</h4>기준으로 <br />
