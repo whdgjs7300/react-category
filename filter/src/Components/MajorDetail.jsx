@@ -9,11 +9,12 @@ const MajorDetail = () => {
     let {id} = useParams();
 
     const [major,setMajor] = useState([]);
-    const idFilter = hospitalData
-    .filter(major=> category[id].name == major.진료과목내용명);
-    console.log(idFilter);
-
     
+    const idFilter = hospitalData
+    .filter(major=> major.진료과목내용명.includes( category[id].name));
+    console.log(idFilter)
+
+
     return ( 
         <div>
             <h4>{category[id].name}</h4>

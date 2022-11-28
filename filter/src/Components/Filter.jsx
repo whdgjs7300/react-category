@@ -15,7 +15,7 @@ const Filter = () => {
     const [linkURL,setLinkURL] = useState('');
 
     // 필터버튼 이벤트 함수
-    const handleBtns = (e) =>{ 
+    const handleBtns = (e) =>{  
         let word = e.target.value;
         if (word === 'Major') { 
             setCategory(categorydata);  
