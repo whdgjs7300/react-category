@@ -8,11 +8,18 @@ const DetailInfo = () => {
     
     const {category,hospitalData} = useContext(Context);
 
-    const filter = 
+    const majorfilter = 
     hospitalData.
     filter(major => major.진료과목내용명.includes(category[id].name));
     
-    console.log(filter[majorid].사업장);
+    console.log(majorfilter[majorid].사업장);
+
+    const placefilter = 
+    hospitalData.
+    filter(place => place.주소.includes(category[id].name));
+    
+    
+
 
     return ( 
     
@@ -21,8 +28,8 @@ const DetailInfo = () => {
             병원 지도 api
         </div>
         <div>  
-            <h4> 병원이름</h4>
-            <p> 주소</p>
+            <h4> {majorfilter[majorid].사업장}</h4>
+            <p> {majorfilter[majorid].주소}</p>
         </div>
         
         <div>진료과목</div>
