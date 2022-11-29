@@ -17,11 +17,11 @@ const MajorDetail = () => {
         <div>
             <h4>{category[id].name}</h4>
         {  
-            hospitalData && idFilter.map((item, i)=>{  
+            hospitalData && idFilter.map((item, hosptialid)=>{  
             return (
-                <div key={i}> 
+                <div key={hosptialid}> 
         
-            <Link to={'/detailinfo'+i}>
+            <Link to={'/detailinfo/'+id+'/'+hosptialid}>
             <div>                
                 <h4>진료과목</h4>기준으로 <br />
                 검색된 병원 목록입니다               

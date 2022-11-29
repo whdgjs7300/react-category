@@ -27,7 +27,7 @@ const PlaceDetail = () => {
         return (
             <div key={i}> 
     
-        <Link to={'/detailinfo'+i}>
+        <Link to={'/detailinfo/'+i}>
         <div>                
             <h4>지역별</h4>기준으로 <br />
             검색된 병원 목록입니다               

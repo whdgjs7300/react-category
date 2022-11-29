@@ -4,11 +4,15 @@ import { Context } from "../App";
 
 
 const DetailInfo = () => {
-    const {id} = useParams();
-    const [count,setCount] = useState(0);
-    const {category,hospitalData} = useContext(Context)
-
+    const {id, hospitalid} = useParams();
     
+    const {category,hospitalData} = useContext(Context);
+
+    const filter = 
+    hospitalData.
+    filter(major => major.진료과목내용명.includes(category[id].name));
+    
+    console.log(filter[hospitalid].사업장);
 
     return ( 
     

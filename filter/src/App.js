@@ -31,9 +31,9 @@ function App() {
       
       <Routes>     
         <Route path='/' element={<Filter/>}></Route>
-        <Route path='/placedetail:id' element={<PlaceDetail/>}></Route>
-        <Route path='/Majordetail:id' element={<MajorDetail/>}></Route>
-        <Route path='/detailinfo:id' element={<DetailInfo/>} > </Route>
+        <Route path='/placedetail/:id' element={<PlaceDetail/>}></Route>
+        <Route path='/Majordetail/:id' element={<MajorDetail/>}></Route>
+        <Route path='/detailinfo/:id/:hospitalid' element={<DetailInfo/>} > </Route>
       </Routes>
 
 
