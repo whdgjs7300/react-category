@@ -27,7 +27,7 @@ const PlaceDetail = () => {
         </div> 
     {  
         hospitalData && idFilter.map((item, placeid)=>{  
-        return (
+        return ( 
             <div key={placeid} item={item}> 
     
         <Link className="linktext" to={'/placedetailInfo/'+id+'/'+placeid}>

@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { Context } from "../App";
 
 
-const DetailInfo = () => {
+const MajorDetailInfo = () => {
     const {id, majorid} = useParams();    
     const {category,hospitalData} = useContext(Context);
     
@@ -14,7 +14,7 @@ const DetailInfo = () => {
     return (  
     
     <div>
-        
+         
         <div className="detail__title">  
             <h4> {majorfilter[majorid].사업장}</h4>
             <p> {majorfilter[majorid].주소}</p>
@@ -39,4 +39,4 @@ const DetailInfo = () => {
     );
 }
 
-export default DetailInfo;
+export default MajorDetailInfo;

@@ -13,7 +13,7 @@ const PlaceDetailInfo = () => {
     hospitalData.filter(place => place.주소.includes(category[id].name));
     
 
-    return ( 
+    return (  
         <div> 
         
         <div className="detail__title">  
