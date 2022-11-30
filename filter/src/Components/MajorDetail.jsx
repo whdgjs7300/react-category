@@ -5,7 +5,7 @@ import { useParams, Link } from "react-router-dom";
 
 const MajorDetail = () => {
 
-    const {category,hospitalData,setHospitalData,} = useContext(Context);
+    const {category,hospitalData,} = useContext(Context);
     let {id} = useParams();
     
     const idFilter = hospitalData
@@ -15,22 +15,34 @@ const MajorDetail = () => {
 
     return ( 
         <div>
-            <h4>{category[id].name}</h4>
-        {  
-            hospitalData && idFilter.map((item, majorid)=>{  
-            return (
-                <div key={majorid}> 
-        
-            <Link to={'/detailinfo/'+id+'/'+majorid}>
-            <div>                
+            <h2>{category[id].name}</h2>
+            <div className="detail__title">                
                 <h4>진료과목</h4>기준으로 <br />
                 검색된 병원 목록입니다               
             </div>
-                <div> 
-                    <h5>병원</h5>  
+        {  
+            hospitalData && idFilter.map((item, majorid)=>{  
+            return (
+                <div key={majorid} item={item}> 
+        
+            <Link className="linktext" to={'/majordetailinfo/'+id+'/'+majorid}>          
+        <div className="detail__box"> 
+                    
                     <h4>{item.사업장}</h4>
-                    <p>{item.주소}</p>         
-                </div>
+                    <p>{item.주소}</p>
+            <div className="detail__box2">
+                <div>의료인수 <br />
+                {item.의료인수}
+                </div> 
+                <div>입원실수 <br />
+                {item.입원실수}
+                </div> 
+                <div>병상수 <br />
+                {item.병상수}
+                </div> 
+            </div>         
+        </div>
+            
             </Link>                
                 </div>
             )

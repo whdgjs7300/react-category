@@ -14,29 +14,41 @@ const PlaceDetail = () => {
     
     let {id} = useParams();
     
-    const idFilter = hospitalData
-    .filter(place=> place.주소.includes( category[id].name));
+    const idFilter = hospitalData.filter(place=> place.주소.includes( category[id].name));
     
 
 
     return (  
         <div>
-        <h4>{category[id].name}</h4>
-    {  
-        hospitalData && idFilter.map((item, i)=>{  
-        return (
-            <div key={i}> 
-    
-        <Link to={'/detailinfo/'+i}>
-        <div>                
+        <h2>{category[id].name}</h2>
+        <div className="detail__title">                
             <h4>지역별</h4>기준으로 <br />
             검색된 병원 목록입니다               
-        </div>
-            <div> 
-                <h5>병원</h5>  
+        </div> 
+    {  
+        hospitalData && idFilter.map((item, placeid)=>{  
+        return (
+            <div key={placeid} item={item}> 
+    
+        <Link className="linktext" to={'/placedetailInfo/'+id+'/'+placeid}>
+            
+        <div className="detail__box"> 
+                
                 <h4>{item.사업장}</h4>
-                <p>{item.주소}</p>         
+                <p>{item.주소}</p>
+            <div className="detail__box2">
+                <div>의료인수 <br />
+                {item.의료인수}
+                </div> 
+                <div>입원실수 <br />
+                {item.입원실수}
+                </div> 
+                <div>병상수 <br />
+                {item.병상수}
+                </div> 
             </div>
+        </div>
+            
         </Link>                
             </div>
         )

@@ -8,10 +8,10 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import PlaceDetail from './Components/PlaceDetail';
 import { useState } from "react";
 import { createContext } from 'react'; 
-import DetailInfo from './Components/DetailInfo';
+import MajorDetailInfo from './Components/MajorDetailInfo';
 import Hospital from "./Data/Hospital.json"
 import MajorDetail from './Components/MajorDetail';
-
+import PlaceDetailInfo from './Components/PlaceDetailInfo';
 
 // State 보관함 
 export const Context = createContext();
@@ -33,7 +33,9 @@ function App() {
         <Route path='/' element={<Filter/>}></Route>
         <Route path='/placedetail/:id' element={<PlaceDetail/>}></Route>
         <Route path='/Majordetail/:id' element={<MajorDetail/>}></Route>
-        <Route path='/detailinfo/:id/:majorid' element={<DetailInfo/>} > </Route>
+        <Route path='/majordetailinfo/:id/:majorid' element={<MajorDetailInfo/>} > </Route>
+        <Route path='/placedetailinfo/:id/:placeid' element={<PlaceDetailInfo/>} > </Route>
+        
       </Routes>
 
 

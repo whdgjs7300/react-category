@@ -30,25 +30,27 @@ const Filter = () => {
     <>
     <div className="filter__container">
         <div>
-            <button value='Place' onClick={handleBtns}>지역별</button>
-            <button value='Major' onClick={handleBtns}>진료별</button>
+            <button  className="filter__btn" value='Place' onClick={handleBtns}>지역별</button>
+            <button  className="filter__btn" value='Major' onClick={handleBtns}>진료별</button>
         </div>            
         
-        <div>  
-        {               
+        <div className="category__container">  
+        {                
         category == categorydata1 ? categorydata1.map((item,i)=>{  
             return ( 
+                
         <div key={i} className="category__box">             
-            <Link to={'/placedetail/'+i}>
+            <Link className="linktext" to={'/placedetail/'+i}>
                 <span>{item.icon}</span> 
-                <h4>{item.name}</h4>   
+                <h4>{item.name}</h4>    
             </Link>  
+
         </div>  
             )
         }) :   categorydata.map((item,i)=>{
             return (
         <div key={i} className="category__box">             
-            <Link to={'/majordetail/'+i}>
+            <Link className="linktext" to={'/majordetail/'+i}>
                 <span>{item.icon}</span> 
                 <h4>{item.name}</h4>   
             </Link> 
