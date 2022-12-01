@@ -11,6 +11,7 @@ const PlaceDetail = () => {
     
     const {category,hospitalData} = useContext(Context);
     const [limit,setLimit] = useState(0);
+    const [page, setPage] = useState(1);
     
     let {id} = useParams();
     
@@ -32,7 +33,7 @@ const PlaceDetail = () => {
     {   
 
         hospitalData && idFilter.map((item, placeid)=>{    
-            if(!( placeid < 10+limit )) {
+            if(!( placeid >= limit && placeid <10+limit )) {
                 return null;
             }          
             return (             
@@ -66,9 +67,15 @@ const PlaceDetail = () => {
     <div>
     <button onClick={()=>{
         setLimit(limit+10)
+        
     }} className="more-btn" >더보기</button>  
     </div>
-    
+        <ul>
+            <li onClick={()=>{
+                setLimit(limit+10);
+                setPage(page+1)
+            }}>{page}</li>
+        </ul>
     </div>
     );
 } 
