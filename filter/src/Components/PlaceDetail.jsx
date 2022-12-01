@@ -14,13 +14,11 @@ const PlaceDetail = () => {
     
     let {id} = useParams();
     
+    // 지역별 필터링 
     const idFilter = hospitalData.filter(place=> place.주소.includes( category[id].name));
-    console.log(idFilter)
+    
 
-    // 더보기 이벤트 버튼 함수
-    const isShow = () => {
-        if( idFilter) {}
-    }
+    
     
 
 
@@ -34,7 +32,7 @@ const PlaceDetail = () => {
     {   
 
         hospitalData && idFilter.map((item, placeid)=>{    
-            if(!( placeid < 10+limit  )) {
+            if(!( placeid < 10+limit )) {
                 return null;
             }          
             return (             
@@ -64,10 +62,13 @@ const PlaceDetail = () => {
         ) 
     })
     
-    }        
+    }         
+    <div>
     <button onClick={()=>{
         setLimit(limit+10)
-    }} >더보기</button>   
+    }} className="more-btn" >더보기</button>  
+    </div>
+    
     </div>
     );
 } 

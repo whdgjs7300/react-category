@@ -6,17 +6,18 @@ import { useParams, Link } from "react-router-dom";
 const MajorDetail = () => {
 
     const {category,hospitalData,} = useContext(Context);
-    const [isShowmore,setIsShowmore] = useState(false);
+    const [limit,setLimit] = useState(0);
 
     let {id} = useParams(); 
     
+    // 과목별 필터링
     const idFilter = hospitalData
     .filter(major=> major.진료과목내용명.includes( category[id].name));
     
 
 
     return ( 
-        <div>
+        <div> 
             <h2>{category[id].name}</h2>
             <div className="detail__title">                
                 <h4>진료과목</h4>기준으로 <br />
@@ -24,7 +25,9 @@ const MajorDetail = () => {
             </div>
         {  
             hospitalData && idFilter.map((item, majorid)=>{  
-                
+                if(!( majorid < 10+limit )) {
+                    return null;
+                }
                 return (
                 <div key={majorid} item={item}> 
 
@@ -53,7 +56,11 @@ const MajorDetail = () => {
         })
         
         } 
-        <button>더보기</button>
+        <div>
+    <button onClick={()=>{
+        setLimit(limit+10)
+    }} className="more-btn" >더보기</button>  
+    </div>
         </div>
     );
 }
