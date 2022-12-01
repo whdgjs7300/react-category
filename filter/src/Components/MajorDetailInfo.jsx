@@ -11,10 +11,10 @@ const MajorDetailInfo = () => {
     hospitalData.filter(major => major.진료과목내용명.includes(category[id].name));
     
 
-    return (  
+    return (    
     
     <div>
-         
+        
         <div className="detail__title">  
             <h4> {majorfilter[majorid].사업장}</h4>
             <p> {majorfilter[majorid].주소}</p>
@@ -30,7 +30,7 @@ const MajorDetailInfo = () => {
         </div> 
 
         <div className="linkbox">
-        <Link className="linktext">
+        <Link to={'/reservation'} className="linktext">
             예약하기 
         </Link>
         </div>

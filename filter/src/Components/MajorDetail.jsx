@@ -6,7 +6,9 @@ import { useParams, Link } from "react-router-dom";
 const MajorDetail = () => {
 
     const {category,hospitalData,} = useContext(Context);
-    let {id} = useParams();
+    const [isShowmore,setIsShowmore] = useState(false);
+
+    let {id} = useParams(); 
     
     const idFilter = hospitalData
     .filter(major=> major.진료과목내용명.includes( category[id].name));
@@ -22,15 +24,16 @@ const MajorDetail = () => {
             </div>
         {  
             hospitalData && idFilter.map((item, majorid)=>{  
-            return (
+                
+                return (
                 <div key={majorid} item={item}> 
-        
+
             <Link className="linktext" to={'/majordetailinfo/'+id+'/'+majorid}>          
         <div className="detail__box"> 
                     
                     <h4>{item.사업장}</h4>
                     <p>{item.주소}</p>
-            <div className="detail__box2">
+            <div className="detail__box2"> 
                 <div>의료인수 <br />
                 {item.의료인수}
                 </div> 
@@ -43,12 +46,14 @@ const MajorDetail = () => {
             </div>         
         </div>
             
-            </Link>                
+            </Link>  
+                        
                 </div>
             )
         })
         
-        }           
+        } 
+        <button>더보기</button>
         </div>
     );
 }

@@ -12,6 +12,8 @@ import MajorDetailInfo from './Components/MajorDetailInfo';
 import Hospital from "./Data/Hospital.json"
 import MajorDetail from './Components/MajorDetail';
 import PlaceDetailInfo from './Components/PlaceDetailInfo';
+import Reservation from './Components/Reservation';
+
 
 // State 보관함 
 export const Context = createContext();
@@ -36,7 +38,7 @@ function App() {
         <Route path='/Majordetail/:id' element={<MajorDetail/>}></Route>
         <Route path='/majordetailinfo/:id/:majorid' element={<MajorDetailInfo/>} > </Route>
         <Route path='/placedetailinfo/:id/:placeid' element={<PlaceDetailInfo/>} > </Route>
-        
+        <Route path='/reservation' element={<Reservation/>}></Route>
       </Routes>
 
 
