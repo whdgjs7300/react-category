@@ -12,13 +12,18 @@ const PlaceDetail = () => {
     const {category,hospitalData} = useContext(Context);
     const [limit,setLimit] = useState(0);
     const [page, setPage] = useState(1);
+    const [pages,setPages] = useState([]);
     
+
+
+    
+
     let {id} = useParams();
     
     // 지역별 필터링 
     const idFilter = hospitalData.filter(place=> place.주소.includes( category[id].name));
     
-
+    
     
     
 
@@ -61,21 +66,24 @@ const PlaceDetail = () => {
         </Link>                
             </div>
         ) 
-    })
-    
-    }         
-    <div>
-    <button onClick={()=>{
-        setLimit(limit+10)
+    })    
+    }   
         
-    }} className="more-btn" >더보기</button>  
-    </div>
-        <ul>
-            <li onClick={()=>{
+    {
+        hospitalData && idFilter.map((pages,index)=> {
+            
+            return <button key={index}></button>
+        })
+    } 
+
+    <div>        
+        <button onClick={()=>{
                 setLimit(limit+10);
                 setPage(page+1)
-            }}>{page}</li>
-        </ul>
+            }}>{page}</button>  
+    </div>
+
+        
     </div>
     );
 } 
