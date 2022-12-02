@@ -27,7 +27,7 @@ const Filter = () => {
     return (  
 
 
-    <>
+    <> 
     <div className="filter__container">
         <div>
             <button  className="filter__btn" value='Place' onClick={handleBtns}>지역별</button>
