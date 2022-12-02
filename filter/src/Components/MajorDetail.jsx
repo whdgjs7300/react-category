@@ -25,7 +25,7 @@ const MajorDetail = () => {
             </div>
         {  
             hospitalData && idFilter.map((item, majorid)=>{  
-                if(!( majorid < 10+limit )) {
+                if(!( majorid >= limit && majorid < 10+limit )) {
                     return null;
                 }
                 return (
@@ -43,7 +43,7 @@ const MajorDetail = () => {
                 <div>입원실수 <br />
                 {item.입원실수}
                 </div> 
-                <div>병상수 <br />
+                <div>병상수 <br /> 
                 {item.병상수}
                 </div> 
             </div>         
@@ -61,6 +61,10 @@ const MajorDetail = () => {
         setLimit(limit+10)
     }} className="more-btn" >더보기</button>  
     </div>
+
+    <ul>
+        <li></li>
+    </ul>
         </div>
     );
 }
