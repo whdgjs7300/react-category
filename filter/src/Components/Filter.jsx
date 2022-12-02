@@ -11,9 +11,12 @@ import { Context } from "../App";
 const Filter = () => { 
     
     const {category, setCategory} = useContext(Context);
-    
+    const {isFilter,setIsFilter} = useState(false);
+
+
     // 필터버튼 이벤트 함수
     const handleBtns = (e) =>{  
+        
         let word = e.target.value;
         if (word === 'Major') { 
             setCategory(categorydata);  
@@ -27,7 +30,7 @@ const Filter = () => {
     return (  
 
 
-    <> 
+    <>  
     <div className="filter__container">
         <div>
             <button  className="filter__btn" value='Place' onClick={handleBtns}>지역별</button>
@@ -35,14 +38,14 @@ const Filter = () => {
         </div>            
         
         <div className="category__container">  
-        {                
+        {           
         category == categorydata1 ? categorydata1.map((item,i)=>{  
             return ( 
                 
         <div key={i} className="category__box">             
             <Link className="linktext" to={'/placedetail/'+i}>
                 <span>{item.icon}</span> 
-                <h4>{item.name}</h4>    
+                <h4>{item.name}</h4>     
             </Link>  
 
         </div>  
@@ -57,7 +60,6 @@ const Filter = () => {
         </div>
             )
         })
-        
         
         } 
         </div>                

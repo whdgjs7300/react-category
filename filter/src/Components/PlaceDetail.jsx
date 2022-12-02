@@ -47,7 +47,7 @@ const PlaceDetail = () => {
         setPage(page)
     }
 
-    return (  
+    return (   
         <div>
         <h2>{category[id].name}</h2> 
         <div className="detail__title">                
@@ -55,10 +55,10 @@ const PlaceDetail = () => {
             검색된 병원 목록입니다               
         </div>  
 
-    {
+    { 
     idFilter.slice(
         10*(page-1),
-        10*(page-1)+10 
+        10*(page-1)+10  
     ).map((item, placeid)=>{    
         if(!( placeid >= limit && placeid <10+limit )) {
             return null;
@@ -100,7 +100,7 @@ const PlaceDetail = () => {
         totalItemsCount={idFilter.length}
         //pageRangeDisplayed: Paginator 내에서 보여줄 페이지의 범위
         pageRangeDisplayed={5}
-        // 이전, 다음페이지
+        // 이전, 다음페이지 
         prevPageText="‹"
         nextPageText="›"
         // 페이지가 바뀔때 핸들링 해줄함수 
