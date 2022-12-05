@@ -3,13 +3,16 @@ import { useParams, Link } from "react-router-dom";
 import { Context } from "../App";
 
 
-const MajorDetailInfo = () => {
+const MajorDetailInfo = ({page}) => {
     const {id, majorid} = useParams();    
     const {category,hospitalData} = useContext(Context);
     
+
+
     const majorfilter = 
-    hospitalData.filter(major => major.진료과목내용명.includes(category[id].name));
-    console.log(majorfilter)
+    hospitalData.filter(major => major.진료과목내용명.includes(category[id].name))
+    ;
+    
 
     return (    
     

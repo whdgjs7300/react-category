@@ -47,8 +47,8 @@ const MajorDetail = () => {
     } 
 
 
-    console.log( 10*(page-1),  
-    10*(page-1)+10);
+    
+    
 
     return ( 
         <div> 
@@ -65,10 +65,9 @@ const MajorDetail = () => {
         if(!( majorid >= limit && majorid <10+limit )) {
             return null;
         }          
-        return (             
-        <div key={majorid} item={item}> 
-                
-    <Link className="linktext" to={'/majordetailInfo/'+id+'/'+ majorid}>
+        return (
+        <div key={majorid} item={item}>            
+    <Link className="linktext" to={'/majordetailInfo/'+id+'/'+ (majorid+ 10*(page-1))}>
         
     <div className="detail__box">  
             
