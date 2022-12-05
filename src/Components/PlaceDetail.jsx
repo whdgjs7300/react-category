@@ -66,7 +66,7 @@ const PlaceDetail = () => {
         return (             
         <div key={placeid} item={item}> 
                 
-    <Link className="linktext" to={'/placedetailInfo/'+id+'/'+(placeid+ 10*(page-1))}>
+    <Link className="linktext" to={'/placedetail/'+id+'/'+(placeid+ 10*(page-1))}>
         
     <div className="detail__box">  
             

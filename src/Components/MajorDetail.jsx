@@ -33,9 +33,10 @@ const MajorDetail = () => {
     const [limit,setLimit] = useState(0);
     const [page, setPage] = useState(1);
     
-
-    let {id} = useParams(); 
+    let pageidnum = page
+    let {id,pageid} = useParams(); 
     
+
     // 과목별 필터링
     const idFilter = hospitalData
     .filter(major=> major.진료과목내용명.includes( category[id].name));
@@ -67,7 +68,7 @@ const MajorDetail = () => {
         }          
         return (
         <div key={majorid} item={item}>            
-    <Link className="linktext" to={'/majordetailInfo/'+id+'/'+ (majorid+ 10*(page-1))}>
+    <Link className="linktext" to={'/majordetail/'+id+'/'+(majorid+ 10*(page-1))}>
         
     <div className="detail__box">  
             
@@ -90,7 +91,7 @@ const MajorDetail = () => {
         </div>
     ) 
 })     
-    }
+    } 
     <PaginationBox>
     <Pagination
     //activePage: 현재 페이지

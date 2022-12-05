@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { Context } from "../App";
 
 
-const MajorDetailInfo = ({page}) => {
+const MajorDetailInfo = () => {
     const {id, majorid} = useParams();    
     const {category,hospitalData} = useContext(Context);
     

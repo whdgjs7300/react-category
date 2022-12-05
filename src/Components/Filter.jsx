@@ -47,7 +47,7 @@ const Filter = () => {
             return ( 
                 
         <div key={i} className="category__box">              
-            <Link className="linktext" to={'/placedetail/'+i}>
+            <Link className="linktext" to={'/placedetail/'+i+'/'}>
                 <span>{item.icon}</span>  
                 <h4>{item.name}</h4>      
             </Link>  
@@ -57,7 +57,7 @@ const Filter = () => {
         }) :   categorydata.map((item,i)=>{
             return (
         <div key={i} className="category__box">             
-            <Link className="linktext" to={'/majordetail/'+i}>
+            <Link className="linktext" to={'/majordetail/'+i+'/'}>
                 <span>{item.icon}</span> 
                 <h4>{item.name}</h4>   
             </Link> 
