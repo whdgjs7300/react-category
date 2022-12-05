@@ -51,7 +51,7 @@ const Filter = () => {
                 <span>{item.icon}</span>  
                 <h4>{item.name}</h4>      
             </Link>  
-
+                
         </div>  
             )
         }) :   categorydata.map((item,i)=>{
@@ -65,7 +65,7 @@ const Filter = () => {
             )
         })
         : null
-        } 
+        }  
 
         </div>        
                 

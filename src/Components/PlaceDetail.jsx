@@ -37,7 +37,7 @@ const PlaceDetail = () => {
         
 
     let {id} = useParams();
-     
+    
     // 지역별 필터링 
     const idFilter = hospitalData.filter(place=> place.주소.includes( category[id].name));
     
@@ -57,8 +57,8 @@ const PlaceDetail = () => {
 
     { 
     idFilter.slice(
-        10*(page-1),
-        10*(page-1)+10  
+        10*(page-1), 
+        10*(page-1)+10   
     ).map((item, placeid)=>{    
         if(!( placeid >= limit && placeid <10+limit )) {
             return null;

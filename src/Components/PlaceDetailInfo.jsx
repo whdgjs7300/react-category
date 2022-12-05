@@ -10,7 +10,8 @@ const PlaceDetailInfo = () => {
     const {id, placeid} = useParams();
     
     const placefilter = 
-    hospitalData.filter(place => place.주소.includes(category[id].name));
+    hospitalData.filter(place => place.주소.includes(category[id].name))
+    ;
     
 
     return (   

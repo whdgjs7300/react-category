@@ -2,7 +2,7 @@ import { Context } from "../App";
 import { useContext, useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import Pagination from 'react-js-pagination';
-import styled from "styled-components";
+import styled from "styled-components"; 
 
 const MajorDetail = () => {
     // Styled-components 페이지 네이션만 적용
@@ -32,6 +32,7 @@ const MajorDetail = () => {
     const {category,hospitalData,} = useContext(Context);
     const [limit,setLimit] = useState(0);
     const [page, setPage] = useState(1);
+    
 
     let {id} = useParams(); 
     
@@ -41,9 +42,13 @@ const MajorDetail = () => {
     
     // 페이지 핸들링 함수
     const handlePageChange =(page)=>{
-        setPage(page)
+        setPage(page);
+        
     } 
 
+
+    console.log( 10*(page-1),  
+    10*(page-1)+10);
 
     return ( 
         <div> 
@@ -55,7 +60,7 @@ const MajorDetail = () => {
             {
     idFilter.slice(
         10*(page-1),  
-        10*(page-1)+10 
+        10*(page-1)+10
     ).map((item, majorid)=>{     
         if(!( majorid >= limit && majorid <10+limit )) {
             return null;
@@ -94,7 +99,7 @@ const MajorDetail = () => {
         //itemsCountPerPage: 한 페이지당 보여줄 리스트 아이템의 개수
         itemsCountPerPage={10}
         //totalItemsCount: 총 아이템의 개수
-        totalItemsCount={idFilter.length}
+        totalItemsCount={idFilter.length-1}
         //pageRangeDisplayed: Paginator 내에서 보여줄 페이지의 범위
         pageRangeDisplayed={5}
         // 이전, 다음페이지
