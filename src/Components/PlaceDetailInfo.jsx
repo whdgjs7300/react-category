@@ -25,7 +25,7 @@ const PlaceDetailInfo = () => {
 
         <div className="detail__mapbox">
             병원 지도 api
-        </div>
+        </div> 
         <div className="detail__info">
         <h4> 진료과목</h4>
         {placefilter[placeid].진료과목내용명} 

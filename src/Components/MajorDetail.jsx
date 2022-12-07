@@ -1,6 +1,6 @@
 import { Context } from "../App";
 import { useContext, useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import Pagination from 'react-js-pagination';
 import styled from "styled-components"; 
 
@@ -10,9 +10,9 @@ const MajorDetail = () => {
     .pagination { display: flex; justify-content: center; margin-top: 15px;}
     ul { list-style: none; padding: 0; }
     ul.pagination li {
-        display: inline-block;
+        display: inline-block; 
         width: 30px;
-        height: 30px;
+        height: 30px; 
         border: 1px solid #e2e2e2;
         display: flex;
         justify-content: center;
@@ -32,8 +32,10 @@ const MajorDetail = () => {
     const {category,hospitalData,} = useContext(Context);
     const [limit,setLimit] = useState(0);
     const [page, setPage] = useState(1);
+    const navigate = useNavigate();
     
-    let pageidnum = page
+    
+    
     let {id,pageid} = useParams(); 
     
 
@@ -42,23 +44,25 @@ const MajorDetail = () => {
     .filter(major=> major.진료과목내용명.includes( category[id].name));
     
     // 페이지 핸들링 함수
-    const handlePageChange =(page)=>{
-        setPage(page);
+    const handlePageChange =(page)=>{ 
+        setPage(page); 
+        navigate()
         
-    } 
+    }   
 
-
+    console.log(page); 
     
     
 
     return ( 
         <div> 
-            <h2>{category[id].name}</h2>
+            <h2>{category[id].name}</h2> 
             <div className="detail__title">                
                 <h4>진료과목</h4>기준으로 <br />
                 검색된 병원 목록입니다               
             </div>
-            {
+
+            { 
     idFilter.slice(
         10*(page-1),  
         10*(page-1)+10
@@ -70,10 +74,10 @@ const MajorDetail = () => {
         <div key={majorid} item={item}>            
     <Link className="linktext" to={'/majordetail/'+id+'/'+(majorid+ 10*(page-1))}>
         
-    <div className="detail__box">  
+    <div className="detail__box">   
             
             <h4>{item.사업장}</h4>
-            <p>{item.주소}</p> 
+            <p>{item.주소}</p>  
         <div className="detail__box2"> 
             <div>의료인수 <br />
             {item.의료인수}
@@ -87,11 +91,12 @@ const MajorDetail = () => {
         </div>
     </div>
         
-    </Link>                
+    </Link>                 
         </div>
-    ) 
+    )  
 })     
     } 
+
     <PaginationBox>
     <Pagination
     //activePage: 현재 페이지

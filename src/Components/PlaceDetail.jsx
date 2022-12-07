@@ -14,7 +14,7 @@ const PlaceDetail = () => {
     ul.pagination li {
         display: inline-block;
         width: 30px; 
-        height: 30px;
+        height: 30px; 
         border: 1px solid #e2e2e2;
         display: flex;
         justify-content: center;
@@ -45,7 +45,7 @@ const PlaceDetail = () => {
     // 페이지 핸들링 함수
     const handlePageChange =(page)=>{
         setPage(page)
-    }
+    } 
 
     return (   
         <div>
@@ -68,9 +68,9 @@ const PlaceDetail = () => {
                 
     <Link className="linktext" to={'/placedetail/'+id+'/'+(placeid+ 10*(page-1))}>
         
-    <div className="detail__box">  
+    <div className="detail__box">   
             
-            <h4>{item.사업장}</h4>
+            <h4>{item.사업장}</h4> 
             <p>{item.주소}</p> 
         <div className="detail__box2">
             <div>의료인수 <br />
