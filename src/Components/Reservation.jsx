@@ -1,5 +1,5 @@
 import { Context } from "../App";
-import { useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useContext, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -8,9 +8,23 @@ import { ko } from "date-fns/esm/locale";
 
 const Reservation = () => {
     const [startDate, setStartDate] = useState(new Date());
+    const [login,setLogin] = useState(true);
+
+    let navigate = useNavigate();
+
+    const ReservationBtn =() => {
+        if (login) {
+            alert('예약이 완료되었습니다');
+            alert('마이페이지에서 확인해주세요');
+            navigate('/');
+        } else {
+            alert('로그인이 필요합니다');
+            // navigate('로그인 화면주소')
+        }
+    }
 
     return (
-        <div>  
+        <div>   
             <div>  
                 <h2>예약하기</h2>
                 
@@ -23,9 +37,11 @@ const Reservation = () => {
         dateFormat="yyyy.MM.dd (eee)" // 시간 포맷 변경
         showPopperArrow={false}       // 화살표 변경
         minDate={new Date()}          // 오늘 날짜 전은 선택 못하게
-        
-    />
-                </div>                                   
+            />
+            {console.log(startDate)}
+                </div>       
+
+                <button onClick={ReservationBtn}>예약완료</button>
             </div>
             
 

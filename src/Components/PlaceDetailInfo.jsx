@@ -31,9 +31,9 @@ const PlaceDetailInfo = () => {
         {placefilter[placeid].진료과목내용명} 
         </div>
         
-        <div className="linkbox">
-        <Link className="linktext">
-            예약하기
+        <div className="linkbox"> 
+        <Link to={'/reservation'} className="linktext">
+            예약하기 
         </Link>
         </div>
         
