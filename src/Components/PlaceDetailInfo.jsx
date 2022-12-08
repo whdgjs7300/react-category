@@ -31,7 +31,7 @@ const PlaceDetailInfo = () => {
         </div>
         
         <div className="linkbox"> 
-        <Link to={'/reservation/'+placeid} className="linktext">
+        <Link state={placefilter[placeid]} to={'/reservation/'+placeid} className="linktext">
             예약하기 
         </Link>
         </div>

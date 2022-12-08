@@ -1,5 +1,5 @@
 import { Context } from "../App";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { useContext, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -12,6 +12,8 @@ const Reservation = () => {
     const {category,hospitalData} = useContext(Context);
     
     const {bookid} = useParams();
+    
+    const location = useLocation();
     
 
     const [startDate, setStartDate] = useState(new Date());
@@ -39,8 +41,8 @@ const Reservation = () => {
             <div>   
                 <h2>예약하기</h2>
 
-                <h4>병원이름 :</h4>
-                <h5>병원주소 :</h5>
+                <h4>병원이름 :{location.state.사업장}</h4>
+                <h5>병원주소 :{location.state.주소}</h5>
 
                 <div>
                 <h4>예약하실 날짜를 선택해주세요</h4>

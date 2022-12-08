@@ -13,7 +13,7 @@ const MajorDetailInfo = () => {
     const majorfilter = 
     hospitalData.filter(major => major.진료과목내용명.includes(category[id].name))
     ; 
-    console.log(majorfilter[majorid])
+    
     return (     
     
     <div>
@@ -33,7 +33,7 @@ const MajorDetailInfo = () => {
         </div> 
 
         <div className="linkbox">
-        <Link to={'/reservation/'+majorid} className="linktext">
+        <Link state={majorfilter[majorid]} to={'/reservation/'+majorid} className="linktext">
             예약하기 
         </Link>
         </div>
