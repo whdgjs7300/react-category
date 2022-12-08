@@ -30,7 +30,6 @@ const MajorDetail = () => {
 
 
     const {category,hospitalData,} = useContext(Context);
-    const [limit,setLimit] = useState(0);
     const [page, setPage] = useState(1);
     const navigate = useNavigate();
     
@@ -62,20 +61,19 @@ const MajorDetail = () => {
                 검색된 병원 목록입니다               
             </div>
 
-            { 
-    idFilter.slice(
-        10*(page-1),  
-        10*(page-1)+10
-    ).map((item, majorid)=>{     
-        if(!( majorid >= limit && majorid <10+limit )) {
+            {  
+    idFilter.slice( 
+        10*(page-1),   
+        10*(page-1)+10 
+    ).map((item, majorid)=>{    
+        if(!( majorid >= 0 && majorid <10 )) {
             return null;
         }          
         return (
         <div key={majorid} item={item}>            
     <Link className="linktext" to={'/majordetail/'+id+'/'+(majorid+ 10*(page-1))}>
         
-    <div className="detail__box">   
-            
+    <div className="detail__box">               
             <h4>{item.사업장}</h4>
             <p>{item.주소}</p>  
         <div className="detail__box2"> 

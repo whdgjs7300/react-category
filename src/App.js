@@ -39,7 +39,7 @@ function App() {
         <Route path='/majordetail/:id/:majorid' element={<MajorDetailInfo/>} > </Route>
         <Route path='/placedetail/:id/:placeid' element={<PlaceDetailInfo/>} > </Route>
         <Route path='/reservation' element={<Reservation/>}></Route>
-      </Routes>
+      </Routes> 
 
 
       

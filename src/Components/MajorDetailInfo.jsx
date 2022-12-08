@@ -7,14 +7,14 @@ const MajorDetailInfo = () => {
     const {id, majorid} = useParams();    
     const {category,hospitalData} = useContext(Context);
     
+    
 
 
     const majorfilter = 
     hospitalData.filter(major => major.진료과목내용명.includes(category[id].name))
-    ;
-    
-
-    return (    
+    ; 
+    console.log(majorfilter[majorid])
+    return (     
     
     <div>
         
@@ -23,7 +23,7 @@ const MajorDetailInfo = () => {
             <p> {majorfilter[majorid].주소}</p>
             <p> {majorfilter[majorid].전화번호}</p>
         </div>
-        <div className="detail__mapbox">
+        <div className="detail__mapbox"> 
             병원 지도 api
         </div> 
 

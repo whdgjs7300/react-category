@@ -35,7 +35,7 @@ const PlaceDetail = () => {
     const [limit,setLimit] = useState(0);
     const [page, setPage] = useState(1);
         
-
+    
     let {id} = useParams();
     
     // 지역별 필터링 

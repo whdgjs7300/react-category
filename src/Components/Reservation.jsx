@@ -4,30 +4,41 @@ import { useContext, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { ko } from "date-fns/esm/locale";
+import PlaceDetailInfo from "./PlaceDetailInfo";
+
 
 
 const Reservation = () => {
+    const {category,hospitalData} = useContext(Context);
+    const {id, placeid} = useParams();
+    
+    
+
     const [startDate, setStartDate] = useState(new Date());
-    const [login,setLogin] = useState(true);
+    const [login,setLogin] = useState(false);
 
     let navigate = useNavigate();
+    
 
-    const ReservationBtn =() => {
+    const ReservationBtn =() => { 
         if (login) {
             alert('예약이 완료되었습니다');
             alert('마이페이지에서 확인해주세요');
             navigate('/');
         } else {
-            alert('로그인이 필요합니다');
+            alert('로그인이 필요합니다'); 
             // navigate('로그인 화면주소')
         }
-    }
+    }  
 
-    return (
+    return ( 
         <div>   
-            <div>  
+            <div>   
                 <h2>예약하기</h2>
-                
+
+                <h4>병원이름 :</h4>
+                <h5>병원주소 :</h5>
+
                 <div>
                 <h4>예약하실 날짜를 선택해주세요</h4>
                 <DatePicker 
@@ -41,7 +52,7 @@ const Reservation = () => {
             {console.log(startDate)}
                 </div>       
 
-                <button onClick={ReservationBtn}>예약완료</button>
+                <button onClick={ReservationBtn}>예약</button>
             </div>
             
 
