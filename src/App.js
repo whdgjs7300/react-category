@@ -38,7 +38,8 @@ function App() {
         <Route path='/Majordetail/:id/' element={<MajorDetail/>}></Route>
         <Route path='/majordetail/:id/:majorid' element={<MajorDetailInfo/>} > </Route>
         <Route path='/placedetail/:id/:placeid' element={<PlaceDetailInfo/>} > </Route>
-        <Route path='/reservation' element={<Reservation/>}></Route>
+        <Route path='/reservation/:bookid' element={<Reservation/>}></Route>
+
       </Routes> 
 
 

@@ -35,7 +35,7 @@ const MajorDetail = () => {
     
     
     
-    let {id,pageid} = useParams(); 
+    let {id} = useParams(); 
     
 
     // 과목별 필터링

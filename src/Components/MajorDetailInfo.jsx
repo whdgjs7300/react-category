@@ -33,12 +33,12 @@ const MajorDetailInfo = () => {
         </div> 
 
         <div className="linkbox">
-        <Link to={'/reservation'} className="linktext">
+        <Link to={'/reservation/'+majorid} className="linktext">
             예약하기 
         </Link>
         </div>
         
-    </div> 
+    </div>  
     );
 }
 

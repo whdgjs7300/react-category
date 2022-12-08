@@ -10,14 +10,17 @@ import PlaceDetailInfo from "./PlaceDetailInfo";
 
 const Reservation = () => {
     const {category,hospitalData} = useContext(Context);
-    const {id, placeid} = useParams();
     
+    const {bookid} = useParams();
     
 
     const [startDate, setStartDate] = useState(new Date());
     const [login,setLogin] = useState(false);
 
     let navigate = useNavigate();
+    
+
+
     
 
     const ReservationBtn =() => { 
@@ -32,7 +35,7 @@ const Reservation = () => {
     }  
 
     return ( 
-        <div>   
+        <div>    
             <div>   
                 <h2>예약하기</h2>
 
@@ -49,7 +52,7 @@ const Reservation = () => {
         showPopperArrow={false}       // 화살표 변경
         minDate={new Date()}          // 오늘 날짜 전은 선택 못하게
             />
-            {console.log(startDate)}
+            
                 </div>       
 
                 <button onClick={ReservationBtn}>예약</button>
